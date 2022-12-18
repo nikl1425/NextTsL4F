@@ -4,6 +4,10 @@ import NavBar from "../src/components/navBar/NavBar";
 import SideBar from "../src/components/sidebar/SideBar";
 import Footer from "../src/components/footer/Footer";
 
+
+import { Inter } from '@next/font/google'
+const inter = Inter({ subsets: ['latin'] })
+
 type Props = {
     children?: React.ReactNode
 }
@@ -12,7 +16,7 @@ type Props = {
 const Layout : FC<Props> = ( { children } ) => {
     return (
         <>
-        <div className=" h-screen">
+        <div className={`font-sans h-screen`}>
             <div className=" flex h-full overflow-hidden">
                 <div className="flex-1 flex flex-col">
 

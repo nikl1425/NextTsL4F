@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import NavLink from "../link/NavLink";
 import Login from "../Buttons/Login";
+import Search from "../Fields/Search";
 
 const NavBar: FC = () => {
     return (
@@ -14,7 +15,7 @@ const NavBar: FC = () => {
                     </div>
                     <div className="w-1/3">
                         <div className="flex flex-row justify-center">
-                            <h2>mid</h2>
+                            <Search placeholder="Søg efter kurser"/>
                         </div>
                     </div>
                     <div className="w-1/3">
