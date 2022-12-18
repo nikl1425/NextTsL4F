@@ -20,7 +20,7 @@ const Layout : FC<Props> = ( { children } ) => {
             <div className=" flex h-full overflow-hidden">
                 <div className="flex-1 flex flex-col">
 
-                <header className=" flex justify-between items-center p-4 cs-h-1 border-solid border-b-2 border-black">
+                <header className=" flex justify-between items-center p-4 cs-h-1 shadow-xl">
                     <NavBar />
                 </header>
                 
@@ -37,10 +37,12 @@ const Layout : FC<Props> = ( { children } ) => {
 
                     </div>
                 </div> 
-                
+                {/* 
                 <footer className="flex flex-0 items-center bg-blue-300 p-4 cs-h-1">
                     <h1>Footer</h1>
-                </footer>  
+                </footer>
+                
+                */}
 
                 </div>
             </div>
