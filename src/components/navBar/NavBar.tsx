@@ -4,9 +4,10 @@ import React, { Dispatch, FC, SetStateAction } from "react";
 import { Course } from "@prisma/client";
 import { Flex, Box, Spacer, Center, Container, Heading, Button } from '@chakra-ui/react';
 import FontAwesomeWrap from "../Icons/FontAwesomeWrap";
-import { faRocket, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faRocket, faBars, faBell, faComment } from "@fortawesome/free-solid-svg-icons";
 import ToggleButton from "../Buttons/ToggleButton";
 import { toggleSidebar } from "../../redux/reducers/appSlice";
+import LoginButton from "../Buttons/LoginButton";
 
 const NavBar: FC = () => {
 
@@ -43,7 +44,7 @@ const NavBar: FC = () => {
                         </Box>
                         <Box marginLeft='4'>
                             <Center h='full'>
-                                <ToggleButton dispatcher={toggleSidebar} size="sm" border="1px" borderColor="black" iconRef={faBars} iconSize="lg"/>
+                                <ToggleButton dispatcher={toggleSidebar} size="sm" border="1px" borderColor="black" iconRef={faBars} iconSize="lg" />
                             </Center>
                         </Box>
                     </Flex>
@@ -55,7 +56,26 @@ const NavBar: FC = () => {
                     </Center>
                 </Box>
                 <Spacer />
-                <Box bg='red.500' />
+                <Box >
+                    <Container>
+                        <Flex>
+                            <Box marginRight='10px'>
+                                <Center h='full'>
+                                    <FontAwesomeWrap size={'lg'} iconDef={faComment} />
+                                </Center>
+
+                            </Box>
+                            <Box marginRight='10px'>
+                                <Center h='full'>
+                                    <FontAwesomeWrap size={'lg'} iconDef={faBell} />
+                                </Center>
+                            </Box>
+                            <Box>
+                                <LoginButton title="Login" size="sm" border="0px" borderColor="black" />
+                            </Box>
+                        </Flex>
+                    </Container>
+                </Box>
             </Flex>
         </>
     )
