@@ -1,30 +1,28 @@
-import React, {Dispatch, FC, SetStateAction} from "react";
+
 import NavLink from "../link/NavLink";
 import Login from "../Buttons/Login";
 import Search from "../Fields/Search";
-import handle from "../../../pages/api/course";
-import { useRouter } from "next/router";
-import { getRouter } from "../../utility/getRouter";
-
-type routerProps = {
-    path: string,
-    queries: {key: string, value: string}[];
-}
+import React, {Dispatch, FC, SetStateAction} from "react";
+import { Course } from "@prisma/client";
 
 const NavBar: FC = () => {
-    const searchHandler = (title: string, dispatcher: Dispatch<SetStateAction<[]>>) => {
-        let url = `/api/course`;
+    
+    const searchHandler = async (search: string): Promise<Array<Course> | string> => {
+        let url = `api/course?`;
+        console.log(url + new URLSearchParams({ title: search }));
+        const resp = await fetch(url + new URLSearchParams({ title: search }))
 
-        let router = useRouter();
-
-        router.pathname = url;
-        router.query = {
-            title
+        try
+        {
+            const content = await resp.json();
+            console.log(content)
+            return content;
         }
-
-        console.log(router);
-
-        //const response = await fetch()
+        catch(e: any) 
+        {
+            console.log("her")
+            return e.message
+        }
     };
 
     return (
