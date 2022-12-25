@@ -8,6 +8,7 @@ import FontAwesomeWrap from "../Icons/FontAwesomeWrap";
 const Search: FC<SearchProps> = ({ placeholder, handler }) => {
     const [searchInput, setSearchInput] = useState("");
     const [searchResults, setSearchResults] = useState([])
+    const [showIcon, SetShowIcon] = useState(true);
 
     useEffect(() => {
         if (searchInput.length > 3) {
@@ -26,22 +27,33 @@ const Search: FC<SearchProps> = ({ placeholder, handler }) => {
         setSearchInput(value);
     }, []);
 
-    let handleBlur = () => {
+    const handleBlur = () => {
         setSearchInput("");
+        SetShowIcon(true);
     };
 
-    const handleFocus = () => { };
+    const handleFocus = () => {
+        SetShowIcon(false)
+        console.log(showIcon)
+    };
 
     return (
         <>
             <InputGroup>
-                <InputLeftElement
-                    pointerEvents='none'
-                    children={<FontAwesomeWrap iconDef={faSearch} />}
-                    h='full'
-                    color='blue.400'
-                />
-                <Input rounded='lg' focusBorderColor="blue.400" size='sm' variant='outline' placeholder="Søg efter kurser" width='64'/>
+                {showIcon ?
+                    <InputLeftElement
+                        pointerEvents='none'
+                        children={<FontAwesomeWrap iconDef={faSearch} />}
+                        h='full'
+                        color='blue.400'
+                    /> : <></>}
+                <Input onFocus={handleFocus} 
+                onBlur={handleBlur} 
+                rounded='lg' 
+                focusBorderColor="blue.400" 
+                size='sm' variant='outline' 
+                placeholder={placeholder ? placeholder : "Søg efter kurser"} 
+                width='64' />
             </InputGroup>
         </>
     )
