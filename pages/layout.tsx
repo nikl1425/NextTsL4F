@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Grid, GridItem, Box, Container, Flex } from '@chakra-ui/react';
+import NavBar from '../src/components/navBar/NavBar';
 
 type Props = {
     children?: React.ReactNode
@@ -20,8 +21,8 @@ const Layout: FC<Props> = ({ children }) => {
                 color='blackAlpha.700'
                 fontWeight='bold'
             >
-                <GridItem pl='2' bg='orange.300' area={'header'}>
-                    Header
+                <GridItem pl='2' area={'header'}>
+                    <NavBar />
                 </GridItem>
                 <GridItem pl='2' bg='pink.300' area={'nav'}>
                     Nav
