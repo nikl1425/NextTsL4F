@@ -1,53 +1,38 @@
-import React, {FC} from "react";
-import styles from "../styles/layout.module.css";
-import NavBar from "../src/components/navBar/NavBar";
-import SideBar from "../src/components/sidebar/SideBar";
-import Footer from "../src/components/footer/Footer";
-
-
-import { Inter } from '@next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import React, { FC } from "react";
+import { Grid, GridItem, Box, Container, Flex } from '@chakra-ui/react';
 
 type Props = {
     children?: React.ReactNode
 }
 
 
-const Layout : FC<Props> = ( { children } ) => {
+const Layout: FC<Props> = ({ children }) => {
     return (
-        <>
-        <div className={`font-sans h-screen`}>
-            <div className=" flex h-full overflow-hidden">
-                <div className="flex-1 flex flex-col">
-
-                <header className=" flex justify-between items-center p-4 cs-h-1 shadow-xl">
-                    <NavBar />
-                </header>
-                
-                <div className="flex cs-h-8 w-full">
-                    <div className=" flex h-full">
-
-                        <div className="flex w-56 h-full bg-pink-500">
-                            <h1>Sidebar</h1>
-                        </div>
-
-                        <div className="  flex flex-1 overflow-y-auto">
-                            {children}
-                        </div>
-
-                    </div>
-                </div> 
-                {/* 
-                <footer className="flex flex-0 items-center bg-blue-300 p-4 cs-h-1">
-                    <h1>Footer</h1>
-                </footer>
-                
-                */}
-
-                </div>
-            </div>
-        </div> 
-        </>
+        <Box display='block' h='full'>
+            <Grid
+                templateAreas={`
+                "header header"
+                  "nav main"`}
+                gridTemplateRows={'50px 1fr '}
+                gridTemplateColumns={'150px 1fr'}
+                h='calc(100vh)'
+                gap='1'
+                color='blackAlpha.700'
+                fontWeight='bold'
+            >
+                <GridItem pl='2' bg='orange.300' area={'header'}>
+                    Header
+                </GridItem>
+                <GridItem pl='2' bg='pink.300' area={'nav'}>
+                    Nav
+                </GridItem>
+                <GridItem  h='full' bg='green.300' area={'main'} overflowY='auto'>
+                    <Box  >
+                        {children}
+                    </Box>
+                </GridItem>
+            </Grid>
+        </Box >
     )
 }
 
