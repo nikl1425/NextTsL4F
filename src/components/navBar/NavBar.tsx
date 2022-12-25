@@ -6,6 +6,7 @@ import { Flex, Box, Spacer, Center, Container, Heading, Button } from '@chakra-u
 import FontAwesomeWrap from "../Icons/FontAwesomeWrap";
 import { faRocket, faBars } from "@fortawesome/free-solid-svg-icons";
 import ToggleButton from "../Buttons/ToggleButton";
+import { toggleSidebar } from "../../redux/reducers/appSlice";
 
 const NavBar: FC = () => {
 
@@ -42,7 +43,7 @@ const NavBar: FC = () => {
                         </Box>
                         <Box marginLeft='4'>
                             <Center h='full'>
-                                <ToggleButton size="sm" border="2px" borderColor="black" iconRef={faBars} iconSize="lg"/>
+                                <ToggleButton dispatcher={toggleSidebar} size="sm" border="1px" borderColor="black" iconRef={faBars} iconSize="lg"/>
                             </Center>
                         </Box>
                     </Flex>
