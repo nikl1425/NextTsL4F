@@ -5,6 +5,7 @@ import { Course } from "@prisma/client";
 import { Flex, Box, Spacer, Center, Container, Heading, Button } from '@chakra-ui/react';
 import FontAwesomeWrap from "../Icons/FontAwesomeWrap";
 import { faRocket, faBars } from "@fortawesome/free-solid-svg-icons";
+import ToggleButton from "../Buttons/ToggleButton";
 
 const NavBar: FC = () => {
 
@@ -41,9 +42,7 @@ const NavBar: FC = () => {
                         </Box>
                         <Box marginLeft='4'>
                             <Center h='full'>
-                                <Button size='sm' border='2px' variant='outline' borderColor='black'>
-                                    <FontAwesomeWrap size="lg" iconDef={faBars}/>
-                                </Button>
+                                <ToggleButton size="sm" border="2px" borderColor="black" iconRef={faBars} iconSize="lg"/>
                             </Center>
                         </Box>
                     </Flex>
