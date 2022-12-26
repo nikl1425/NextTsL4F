@@ -29,6 +29,8 @@ const Search: FC<SearchProps> = ({ placeholder, handler }) => {
 
     const handleBlur = () => {
         setSearchInput("");
+        console.log(searchInput)
+        console.log("run")
         SetShowIcon(true);
     };
 
@@ -41,20 +43,18 @@ const Search: FC<SearchProps> = ({ placeholder, handler }) => {
         <>
             <InputGroup>
                 {showIcon ?
-                    <InputLeftElement
-                        pointerEvents='none'
-                        
-                        h='full'
-                        color='blue.400'
-                    /> : <></>}
-                    <FontAwesomeWrap iconDef={faSearch} />
-                <Input onFocus={handleFocus} 
+                    <InputLeftElement pointerEvents='none'h='full'color='blue.400'> <FontAwesomeWrap iconDef={faSearch} /> </InputLeftElement> : <></>}
+                <Input 
+                onFocus={handleFocus} 
                 onBlur={handleBlur} 
+                onChange={handleChange}
                 rounded='lg' 
                 focusBorderColor="blue.400" 
                 size='sm' variant='outline' 
                 placeholder={placeholder ? placeholder : "Søg efter kurser"} 
-                width='64' />
+                width='64'
+                value={searchInput}
+                 />
             </InputGroup>
         </>
     )
