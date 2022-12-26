@@ -43,10 +43,11 @@ const Search: FC<SearchProps> = ({ placeholder, handler }) => {
                 {showIcon ?
                     <InputLeftElement
                         pointerEvents='none'
-                        children={<FontAwesomeWrap iconDef={faSearch} />}
+                        
                         h='full'
                         color='blue.400'
                     /> : <></>}
+                    <FontAwesomeWrap iconDef={faSearch} />
                 <Input onFocus={handleFocus} 
                 onBlur={handleBlur} 
                 rounded='lg' 
