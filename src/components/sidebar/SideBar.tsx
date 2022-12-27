@@ -36,7 +36,7 @@ const SideBarContent: FC = () => {
                 
             </Flex>
             {linkItems.map((item) => (
-                <NavItem link={item.link} icon={item.iconDef} name={item.name} />
+                <NavItem key={item.link} link={item.link} icon={item.iconDef} name={item.name} />
             ))}
         </Box>
     )

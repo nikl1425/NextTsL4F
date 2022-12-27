@@ -27,8 +27,7 @@ const Layout: FC<Props> = ({ children }) => {
                 </Box>
                 <Box className="sideBar" h='100%' marginTop='10px' overflow='hidden'  bg='white'>
                     <Flex h="full">
-                        
-                            <Box bg="blue.200" h="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
+                            <Box h="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
                                     <SideBar title="sidebar" />
                             </Box>
                             <Box bg='red.100' w="100%" overflowY='auto' >
