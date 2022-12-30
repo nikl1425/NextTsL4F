@@ -1,8 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
-import { Grid, GridItem, Box, Container, Flex, Slide, Collapse } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 import NavBar from '../src/components/navBar/NavBar';
 import SideBar from "../src/components/sidebar/SideBar";
-import { Bool } from "reselect/es/types";
 import useAppSelector from '../src/redux/hooks/useAppSelector';
 import Footer from '../src/components/footer/Footer';
 
@@ -29,7 +28,7 @@ const Layout: FC<Props> = ({ children }) => {
                 <Box className="sideBar" h='100%' marginTop='10px' overflow='hidden'  bg='white'>
                     <Flex height="full" >
                             <Box height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
-                                    <SideBar title="sidebar" />
+                                    <SideBar active={sideBarActive} title="sidebar" />
                             </Box>
                             <Box bg='red.100' w="100%" h='100%' overflowY='auto' >
                                 {children}
