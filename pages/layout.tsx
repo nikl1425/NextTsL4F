@@ -4,6 +4,7 @@ import NavBar from '../src/components/navBar/NavBar';
 import SideBar from "../src/components/sidebar/SideBar";
 import { Bool } from "reselect/es/types";
 import useAppSelector from '../src/redux/hooks/useAppSelector';
+import Footer from '../src/components/footer/Footer';
 
 
 type Props = {
@@ -26,12 +27,13 @@ const Layout: FC<Props> = ({ children }) => {
                     </Container>
                 </Box>
                 <Box className="sideBar" h='100%' marginTop='10px' overflow='hidden'  bg='white'>
-                    <Flex h="full">
-                            <Box h="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
+                    <Flex height="full" >
+                            <Box height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
                                     <SideBar title="sidebar" />
                             </Box>
-                            <Box bg='red.100' w="100%" overflowY='auto' >
+                            <Box bg='red.100' w="100%" h='100%' overflowY='auto' >
                                 {children}
+                                <Footer />
                             </Box>
                     </Flex>
                 </Box>

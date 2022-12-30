@@ -4,10 +4,12 @@ import React, { Dispatch, FC, SetStateAction } from "react";
 import { Course } from "@prisma/client";
 import { Flex, Box, Spacer, Center, Container, Heading, Button } from '@chakra-ui/react';
 import FontAwesomeWrap from "../Icons/FontAwesomeWrap";
-import { faRocket, faBars, faBell, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faRocket, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faComment } from "@fortawesome/free-regular-svg-icons";
 import ToggleButton from "../Buttons/ToggleButton";
 import { toggleSidebar } from "../../redux/reducers/appSlice";
 import LoginButton from "../Buttons/LoginButton";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavBar: FC = () => {
 
@@ -61,13 +63,12 @@ const NavBar: FC = () => {
                         <Flex>
                             <Box marginRight='10px'>
                                 <Center h='full'>
-                                    <FontAwesomeWrap size={'lg'} iconDef={faComment} />
+                                    <FontAwesomeIcon size="lg" icon={faBell} />
                                 </Center>
-
                             </Box>
                             <Box marginRight='10px'>
                                 <Center h='full'>
-                                    <FontAwesomeWrap size={'lg'} iconDef={faBell} />
+                                <FontAwesomeIcon size="lg" icon={faComment} />
                                 </Center>
                             </Box>
                             <Box>
