@@ -35,7 +35,7 @@ const NavBar: FC = () => {
                 <Box h='full'>
                     <Flex h='full'>
                         <Container h='full'>
-                            <Center h='full' textColor='green.500'>
+                            <Center h='full' textColor='green.300'>
                                 <FontAwesomeWrap size={'2xl'} iconDef={faRocket} />
                             </Center>
                         </Container>
@@ -44,7 +44,7 @@ const NavBar: FC = () => {
                                 <Heading as='h1' size='lg' textColor='black'>Learn4Fun</Heading>
                             </Center>
                         </Box>
-                        <Box marginLeft='4'>
+                        <Box marginLeft='2'>
                             <Center h='full'>
                                 <ToggleButton dispatcher={toggleSidebar} size="sm" border="1px" borderColor="black" iconRef={faBars} iconSize="lg" />
                             </Center>

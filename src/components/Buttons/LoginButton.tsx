@@ -9,7 +9,7 @@ const Login: FC<{
 
     return (
         <>
-            <Button rounded='lg' w='75px' variant='solid' colorScheme='blue' size={size}>{title}</Button>
+            <Button rounded='lg' w='75px' variant='solid' bg={'green.300'} size={size}>{title}</Button>
         </>
     )
 }

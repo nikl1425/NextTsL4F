@@ -10,7 +10,7 @@ export default function Home() {
       <Container h={'100%'} maxW={'7xl'} >
         <Center h={400}>
           <Stack align={'center'}>
-            <Wrap m={0} color={'blue.400'}>
+            <Wrap m={0} color={'green.700'}>
               <FontAwesomeIcon size="3x" icon={faGraduationCap} />
             </Wrap>
             <Stack marginTop='0'>
@@ -26,7 +26,7 @@ export default function Home() {
                 Et Læringsunivers for Tech Entusiatister
               </Text>
             </Stack>
-            <Container marginTop='10px' w={'full'}>
+            <Container marginTop='20px' w={'full'}>
               <Center>
                 <Stack direction={'row'} spacing={'25px'}>
                   <Button rounded={10} bg={'green.300'}>Udforsk Kurser</Button>
