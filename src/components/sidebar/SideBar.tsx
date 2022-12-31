@@ -41,7 +41,7 @@ const SideBarContent: FC<{active: boolean}> = (active) => {
                     <Center>
                         {active ? (<Wrap marginLeft="auto" marginRight="auto">
                             <WrapItem>
-                                <Avatar size='lg' name={name} src='https://bit.ly/kent-c-dodds'><AvatarBadge boxSize='0.8em' bg='green.300' /></Avatar>
+                                <Avatar display="block" size='lg' name={name} src='https://bit.ly/kent-c-dodds'><AvatarBadge boxSize='0.8em' bg='green.300' /></Avatar>
                             </WrapItem>
                         </Wrap>) : <Box></Box>}
                         

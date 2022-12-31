@@ -27,10 +27,10 @@ const Layout: FC<Props> = ({ children }) => {
                 </Box>
                 <Box className="sideBar" h='100%' marginTop='10px' overflow='hidden'  bg='white'>
                     <Flex height="full" >
-                            <Box height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
+                            <Box bg='white' boxShadow='md' zIndex={0} height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
                                     <SideBar active={sideBarActive} title="sidebar" />
                             </Box>
-                            <Box bg='red.100' w="100%" h='100%' overflowY='auto' >
+                            <Box mx={2} zIndex={1} bg='white' w="100%" h='100%' overflowY='auto' >
                                 {children}
                                 <Footer />
                             </Box>
