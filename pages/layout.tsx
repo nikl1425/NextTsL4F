@@ -31,8 +31,14 @@ const Layout: FC<Props> = ({ children }) => {
                                     <SideBar active={sideBarActive} title="sidebar" />
                             </Box>
                             <Box mx={2} zIndex={1} bg='white' w="100%" h='100%' overflowY='auto' >
-                                {children}
-                                <Footer />
+                                <Box h={'90%'}>
+                                    {children}
+                                </Box>
+                                
+                                <Box h={'10%'}>
+                                    <Footer/>
+                                </Box>
+                                
                             </Box>
                     </Flex>
                 </Box>
