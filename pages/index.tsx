@@ -1,14 +1,18 @@
-import { Container, Stack, Heading, Text, Center, Wrap, Button } from "@chakra-ui/react"
+import { Container, Stack, Heading, Text, Center, Wrap, Button, useDisclosure, ModalHeader, Modal, ModalContent, ModalBody, ModalOverlay, ModalCloseButton } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import FontAwesomeWrap from "../src/components/Icons/FontAwesomeWrap";
 
 export default function Home() {
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+
   return (
     <>
       <Container h={'100%'} maxW={'7xl'} >
-        <Center h={400}>
+        <Center h={'80%'}>
           <Stack align={'center'}>
             <Wrap m={0} color={'green.700'}>
               <FontAwesomeIcon size="3x" icon={faGraduationCap} />
@@ -30,7 +34,7 @@ export default function Home() {
               <Center>
                 <Stack direction={'row'} spacing={'25px'}>
                   <Button rounded={10} bg={'green.300'}>Udforsk Kurser</Button>
-                  <Button rounded={10} bg={'gray.200'}>
+                  <Button onClick={onOpen} rounded={10} bg={'gray.200'}>
                     <FontAwesomeIcon icon={faPlayCircle}/>
                     <Text mx={1}>Intro Video</Text>
                     </Button>
@@ -40,6 +44,16 @@ export default function Home() {
           </Stack>
         </Center>
       </Container>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Introduktion</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            hejsa
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   )
 }
