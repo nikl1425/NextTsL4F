@@ -1,7 +1,8 @@
-import { Container, Stack, Heading, Text, Center, Wrap, Button, useDisclosure, ModalHeader, Modal, ModalContent, ModalBody, ModalOverlay, ModalCloseButton } from "@chakra-ui/react"
+import { Container, Stack, Heading, Text, Center, Wrap, Button, useDisclosure, ModalHeader, Modal, ModalContent, ModalBody, ModalOverlay, ModalCloseButton, Box } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import VideoPlayer from "../src/components/Video/ReactPlayer";
 import FontAwesomeWrap from "../src/components/Icons/FontAwesomeWrap";
 
 export default function Home() {
@@ -50,7 +51,15 @@ export default function Home() {
           <ModalHeader>Introduktion</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            hejsa
+            <Center>
+              <Container borderRadius={'25px'} p={4}>
+                <VideoPlayer 
+                link="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                lightMode={true} />
+              </Container>
+            </Center>
+           
+            
           </ModalBody>
         </ModalContent>
       </Modal>

@@ -35,7 +35,7 @@ const Layout: FC<Props> = ({ children }) => {
                                     {children}
                                 </Box>
                                 
-                                <Box boxShadow={'md'} h={'10%'}>
+                                <Box boxShadow={'md'}>
                                     <Footer/>
                                 </Box>
                                 
