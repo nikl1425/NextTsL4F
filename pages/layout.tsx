@@ -25,17 +25,17 @@ const Layout: FC<Props> = ({ children }) => {
                         <NavBar />
                     </Container>
                 </Box>
-                <Box className="sideBar" h='100%' marginTop='10px' overflow='hidden'  bg='white'>
+                <Box className="sideBar" h='100%' marginTop='10px'  bg='white' overflow={'hidden'}>
                     <Flex height="full" >
                             <Box bg='white' boxShadow='md' zIndex={0} height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
                                     <SideBar active={sideBarActive} title="sidebar" />
                             </Box>
-                            <Box mx={2} zIndex={1} bg='white' w="100%" h='100%' overflowY='auto' >
-                                <Box h={'90%'}>
+                            <Box mx={2} zIndex={1} bg='white' w="100%" h='100%' >
+                                <Box h={'88%'} marginBottom={'2%'} overflowY={'auto'}>
                                     {children}
                                 </Box>
                                 
-                                <Box boxShadow={'md'}>
+                                <Box h={'10%'} boxShadow={'md'}>
                                     <Footer/>
                                 </Box>
                                 

@@ -8,12 +8,13 @@ type VideoPlayerStyle = {
 }
 
 
-const CustomReactPlayer: FC<{ link: string, videoStyle?: VideoPlayerStyle, lightMode?: boolean }> = ({ link, videoStyle, lightMode }) => {
+const CsReactPlayer: FC<{ link: string }> = ({ link }) => {
     return (
-        <Box as="div" borderRadius={'25px'} p={2}>
-            <ReactPlayer style={{top: 0, bottom: 0}} width={'100%'} controls={true} url={link} light={lightMode ? lightMode : false} />
+        <Box h={'full'}>
+            <ReactPlayer playing={true} height={'100%'}  width={'100%'} controls={true} url={link} light={true} />
         </Box>
+
     )
 }
 
-export default CustomReactPlayer;
+export default CsReactPlayer;

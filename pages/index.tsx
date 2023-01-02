@@ -1,18 +1,23 @@
-import { Container, Stack, Heading, Text, Center, Wrap, Button, useDisclosure, ModalHeader, Modal, ModalContent, ModalBody, ModalOverlay, ModalCloseButton, Box } from "@chakra-ui/react"
+import { Container, Flex, Stack, Heading, Text, Center, Wrap, Button, useDisclosure, ModalHeader, Modal, ModalContent, ModalBody, ModalOverlay, ModalCloseButton, Box } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
-import VideoPlayer from "../src/components/Video/ReactPlayer";
 import FontAwesomeWrap from "../src/components/Icons/FontAwesomeWrap";
+import VideoPlayer from "../src/components/Video/VideoPlayer";
+import CsReactPlayer from "../src/components/Video/ReactPlayer";
+import { useRef } from "react";
+
 
 export default function Home() {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const introVideoRef = useRef<HTMLDivElement>(null)
 
+  const scrollToRef = () => introVideoRef.current?.scrollIntoView({behavior: 'smooth'});
 
   return (
-    <>
-      <Container h={'100%'} maxW={'7xl'} >
+    <Box h={'100%'}>
+      <Container as={'section'} h={'100%'} maxW={'7xl'} >
         <Center h={'80%'}>
           <Stack align={'center'}>
             <Wrap m={0} color={'green.700'}>
@@ -35,34 +40,26 @@ export default function Home() {
               <Center>
                 <Stack direction={'row'} spacing={'25px'}>
                   <Button rounded={10} bg={'green.300'}>Udforsk Kurser</Button>
-                  <Button onClick={onOpen} rounded={10} bg={'gray.200'}>
-                    <FontAwesomeIcon icon={faPlayCircle}/>
+                  <Button onClick={scrollToRef} rounded={10} bg={'gray.200'}>
+                    <FontAwesomeIcon icon={faPlayCircle} />
                     <Text mx={1}>Intro Video</Text>
-                    </Button>
+                  </Button>
                 </Stack>
               </Center>
             </Container>
           </Stack>
         </Center>
       </Container>
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Introduktion</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Center>
-              <Container borderRadius={'25px'} p={4}>
-                <VideoPlayer 
-                link="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-                lightMode={true} />
-              </Container>
-            </Center>
-           
-            
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-    </>
+      <Container maxW={'container.md'} className="niklas" h={500} ref={introVideoRef} as={'section'}>
+        <Stack direction={'column'}>
+          <Center>
+            <Heading as={'h1'}>Introduktions Video</Heading>
+          </Center>
+          <Box margin={'20px'}>
+            <VideoPlayer src="video/video.mp4" />
+          </Box>
+        </Stack>
+      </Container>
+    </Box>
   )
 }

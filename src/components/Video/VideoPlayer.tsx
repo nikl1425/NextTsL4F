@@ -1,12 +1,19 @@
 import { Box, Container } from "@chakra-ui/react";
-import React, {FC} from "react";
+import React, {FC, useRef} from "react";
 
-const VideoPlayer: FC = () => {
+
+const VideoPlayer: FC<{src: string}> = ({src}) => {
+    const videoElement = useRef(null)
+
     return (
         <>
-            <Container>
-                <video />
-            </Container>
+            <Box>
+                <video ref={videoElement}>
+                    <source type="video/mp4" src={src} />
+                </video>
+            </Box>
         </>
     )
 }
+
+export default VideoPlayer;
