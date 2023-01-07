@@ -11,7 +11,7 @@ type VideoPlayerStyle = {
 const CsReactPlayer: FC<{ link: string }> = ({ link }) => {
     return (
         <Box h={'full'}>
-            <ReactPlayer playing={true} height={'100%'}  width={'100%'} controls={true} url={link} light={true} />
+            <ReactPlayer playing={true} height={'100%'}  width={'100%'} controls={true} url={'https://www.youtube.com/watch?v=ysz5S6PUM-U'} light={true} />
         </Box>
 
     )

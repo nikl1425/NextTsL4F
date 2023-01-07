@@ -25,20 +25,19 @@ const Layout: FC<Props> = ({ children }) => {
                         <NavBar />
                     </Container>
                 </Box>
-                <Box className="sideBar" h='100%' marginTop='10px'  bg='white' overflow={'hidden'}>
+                <Box className="sideBar" height={'full'} marginTop='10px'  bg='white' overflow={'hidden'}>
                     <Flex height="full" >
-                            <Box bg='white' boxShadow='md' zIndex={0} height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} transition="1s ease-in-out">
+                            <Box bg='white' boxShadow='md' height="full" w={sideBarActive ? `${SIDEBAR_WIDTH}px` : '0%'} marginRight={2} transition="1s ease-in-out">
                                     <SideBar active={sideBarActive} title="sidebar" />
                             </Box>
-                            <Box mx={2} zIndex={1} bg='white' w="100%" h='100%' >
-                                <Box h={'88%'} marginBottom={'2%'} overflowY={'auto'}>
+                            <Box  zIndex={1} w="full" height={'full'} >
+                                <Box bg='white' height={'93%'} overflowY={'auto'}>
                                     {children}
                                 </Box>
                                 
-                                <Box h={'10%'} boxShadow={'md'}>
+                                <Box height={'7%'} boxShadow={'md'}>
                                     <Footer/>
                                 </Box>
-                                
                             </Box>
                     </Flex>
                 </Box>

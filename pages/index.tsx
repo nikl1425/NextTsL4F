@@ -2,10 +2,9 @@ import { Container, Flex, Stack, Heading, Text, Center, Wrap, Button, useDisclos
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
-import FontAwesomeWrap from "../src/components/Icons/FontAwesomeWrap";
 import VideoPlayer from "../src/components/Video/VideoPlayer";
-import CsReactPlayer from "../src/components/Video/ReactPlayer";
 import { useRef } from "react";
+import CsReactPlayer from '../src/components/Video/ReactPlayer';
 
 
 export default function Home() {
@@ -50,13 +49,23 @@ export default function Home() {
           </Stack>
         </Center>
       </Container>
-      <Container maxW={'container.md'} className="niklas" h={500} ref={introVideoRef} as={'section'}>
+      <Container maxW={'container.md'} className="niklas" h={600} ref={introVideoRef} as={'section'}>
         <Stack direction={'column'}>
           <Center>
             <Heading as={'h1'}>Introduktions Video</Heading>
           </Center>
-          <Box margin={'20px'}>
+          <Box borderRadius={'2xl'} margin={'20px'}>
             <VideoPlayer src="video/video.mp4" />
+          </Box>
+        </Stack>
+      </Container>
+      <Container maxW={'container.md'} className="niklas" h={600} ref={introVideoRef} as={'section'}>
+        <Stack direction={'column'}>
+          <Center>
+            <Heading as={'h1'}>Introduktions Video</Heading>
+          </Center>
+          <Box borderRadius={'2xl'} margin={'20px'}>
+            <CsReactPlayer link={''} />
           </Box>
         </Stack>
       </Container>

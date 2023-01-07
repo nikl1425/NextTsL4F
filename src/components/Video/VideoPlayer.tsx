@@ -7,7 +7,7 @@ const VideoPlayer: FC<{src: string}> = ({src}) => {
 
     return (
         <>
-            <Box>
+            <Box borderRadius={'2xl'}>
                 <video ref={videoElement}>
                     <source type="video/mp4" src={src} />
                 </video>

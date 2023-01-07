@@ -64,7 +64,7 @@ const SocialButton = ({
 const Footer = () => {
     return (
         <Box
-            bg={'gray.50'}
+            bg={'gray.50'} height={'full'}
             >
             <Container
                 as={Stack}
